@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Just Fucking Set Identity Onchain</title>
+    <meta name="description" content="Set your Bittensor subnet identity or keep looking like a disposable coldkey.">
+    <meta property="og:title" content="Just Fucking Set Identity Onchain">
+    <meta property="og:description" content="Name, repo, website, contact, description. Empty fields look sketchy.">
+    <meta name="theme-color" content="#111112">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-copy">
+            <p class="eyebrow">Subnet owners</p>
+            <h1>Just <span class="cuss">Fucking</span> Set Identity Onchain</h1>
+            <div class="hero-actions" aria-label="Primary actions">
+                <a class="btn btn-primary" href="#command">Set it now</a>
+                <a class="btn btn-secondary" href="#audit">Check first</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="rant">
+            <p>
+                Look, <span class="cuss">asshole</span>: if people click your subnet and see a coldkey plus a pile of
+                blanks, they do not think "mysterious genius." They think scam, abandoned repo, or amateur hour.
+                <span class="cuss">Fix the fucking thing.</span>
+            </p>
+        </section>
+
+        <section>
+            <h2>This is not a grand fucking strategy</h2>
+            <p>
+                Name. Repo. Website. Contact. Description. You either have them or you do not. If you do not, your
+                subnet has bigger problems than this website, and everyone can smell it.
+            </p>
+            <p>
+                You already did the hard part. You registered the thing. Now stop leaving the front door unlabeled like
+                some <span class="cuss">bullshit</span> burner wallet.
+            </p>
+        </section>
+
+        <section id="audit" class="tool-section">
+            <div class="section-kicker">Before you cope</div>
+            <h2>See how bad it is</h2>
+            <p>Run the read-only command. No drama. <span class="cuss">Just look at the damn thing</span>.</p>
+            <pre><code>btcli subnets get-identity \
+  --netuid 1 \
+  --subtensor.network finney \
+  --json-output</code></pre>
+            <p class="small">
+                Empty? Fix it. Half-empty? Fix it. Filled with garbage? Congratulations, still fix the
+                shit.
+            </p>
+        </section>
+
+        <section>
+            <h2>What people see</h2>
+            <div class="comparison">
+                <div class="compare-panel bad">
+                    <h3>Looks sketchy</h3>
+                    <ul>
+                        <li><span>Subnet name</span><code>5F4C...b2A1</code></li>
+                        <li><span>Description</span><em>null</em></li>
+                        <li><span>Website</span><em>null</em></li>
+                        <li><span>Repository</span><em>null</em></li>
+                        <li><span>Contact</span><em>null</em></li>
+                        <li><span>Vibe</span><strong>sketchy as hell</strong></li>
+                    </ul>
+                </div>
+
+                <div class="compare-panel good">
+                    <h3>Looks real</h3>
+                    <ul>
+                        <li><span>Subnet name</span><strong>DataDAO Storage</strong></li>
+                        <li><span>Description</span><em>Storage incentives that people can inspect</em></li>
+                        <li><span>Website</span><em>https://datadao.io</em></li>
+                        <li><span>Repository</span><em>github.com/datadao/subnet</em></li>
+                        <li><span>Contact</span><em>ops@datadao.io</em></li>
+                        <li><span>Vibe</span><strong>people can verify the damn thing</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="command" class="tool-section command-section">
+            <div class="section-kicker">The fix</div>
+            <h2>Copy. Paste. Done. Holy shit.</h2>
+            <p>
+                Use the owner coldkey. Replace the fake values. Point to things that exist. <span class="cuss">Run the
+                fucking command</span>.
+            </p>
+            <pre><code>btcli subnets set-identity \
+  --netuid 1 \
+  --wallet.name your-coldkey \
+  --subnet-name "Your Subnet Name" \
+  --github-repo "https://github.com/yourorg/subnet" \
+  --subnet-contact "ops@yoursubnet.com" \
+  --subnet-url "https://yoursubnet.com" \
+  --discord-handle "https://discord.gg/invitecode" \
+  --description "What your subnet actually does" \
+  --additional-info "Docs or dashboard" \
+  --subtensor.network finney</code></pre>
+            <p class="small">
+                Prefer prompts? Run <code>btcli subnets set-identity --netuid 1</code>. If it asks for a logo, give it one.
+                Blank logos are lazy as fuck.
+            </p>
+        </section>
+
+        <section>
+            <h2>Fill in the damn blanks</h2>
+            <dl class="field-list">
+                <dt>Name</dt>
+                <dd>Your name. Not "Subnet 37." Not a coldkey. <span class="cuss">A real fucking name</span>.</dd>
+
+                <dt>Repo</dt>
+                <dd>The repo. If it is closed, say that publicly and own the smell.</dd>
+
+                <dt>Website</dt>
+                <dd>A real website. Not a parked domain. Not a social profile with three sad posts.</dd>
+
+                <dt>Description</dt>
+                <dd>One sentence saying what the subnet does. If you cannot write one, that is the problem.</dd>
+
+                <dt>Discord</dt>
+                <dd>A place people can ask questions without hunting for your group chat.</dd>
+
+                <dt>Contact</dt>
+                <dd>An email. A support alias. Something that proves a human checks the damn door.</dd>
+
+                <dt>Logo</dt>
+                <dd>A logo if your tooling asks for one. Blank squares are not branding, they are surrender.</dd>
+
+                <dt>Extra</dt>
+                <dd>Docs, dashboard, audit, model card, whatever helps. Keep it useful.</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>Your excuses, pre-rejected</h2>
+            <div class="excuse">
+                <h3>"We are still in stealth."</h3>
+                <p>You launched. The chain knows. Emissions know. The only thing in stealth is whether you have a plan.</p>
+            </div>
+            <div class="excuse">
+                <h3>"We will do it after the next upgrade."</h3>
+                <p>You said that last upgrade. This is not a migration. It is typing, for fuck's sake.</p>
+            </div>
+            <div class="excuse">
+                <h3>"Privacy matters."</h3>
+                <p>Great. Use an operator email, public repo, docs site, and community link. Privacy is not the same as hiding badly.</p>
+            </div>
+            <div class="excuse">
+                <h3>"Nobody checks this."</h3>
+                <p>People check it. People with money check it harder.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Why this matters</h2>
+            <ul class="checklist">
+                <li>Blank identity makes you look careless as hell.</li>
+                <li>Careless looks expensive.</li>
+                <li>Expensive-looking risk loses trust.</li>
+                <li>Trust is the whole game.</li>
+                <li>The chain remembers laziness too.</li>
+            </ul>
+        </section>
+
+        <section class="cta">
+            <div class="section-kicker">Stop reading</div>
+            <h2>Set it. Check it. Move on.</h2>
+            <p>
+                Run <code>set-identity</code>. Then run <code>get-identity</code>. Then open an explorer and confirm you no
+                longer look like some half-assed shell script wearing sunglasses indoors.
+            </p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="https://docs.learnbittensor.org/btcli" rel="noopener">Official docs</a>
+                <a class="btn btn-secondary" href="https://github.com/opentensor/subtensor" rel="noopener">Source code</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Yes, this is satire. Mostly.</h2>
+            <p>
+                The command is real. The fields are real. The shame is optional, but apparently some of you
+                motherfuckers need it.
+            </p>
+            <p>
+                Checked against the Bittensor CLI reference on May 25, 2026.
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Not affiliated with the OpenTensor Foundation or Bittensor.</p>
+        <p>
+            Built with static HTML and CSS.
+            <a href="https://github.com/alex-drocks/jfsioc">View the repo</a>.
+        </p>
+        <p>
+            Inspired by
+            <a href="https://justfuckingusehtml.com/">Just Fucking Use HTML</a>,
+            <a href="https://justfuckinguseeffect.dev/">Just Fucking Use Effect</a>,
+            <a href="https://www.justfuckingusedocker.com/">Just Fucking Use Docker</a>,
+            <a href="https://www.justfuckingusepostgres.com/">Just Fucking Use Postgres</a>,
+            and the <a href="https://justfuckinguse.com/">Just Fucking Use archive</a>.
+        </p>
+    </footer>
+</body>
+</html>
